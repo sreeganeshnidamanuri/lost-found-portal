@@ -1,0 +1,6 @@
+.app-root{min-height:100vh;display:flex;flex-direction:column}
+.main{flex:1;padding-bottom:40px}
+.page-wrap{padding-top:8px;padding-bottom:24px}
+.centered-page{max-width:980px;margin:0 auto;padding:24px}
+.empty-state{display:flex;flex-direction:column;align-items:center;gap:12px;padding:40px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.9),#fbfdff);box-shadow:var(--shadow-1)}
+.badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(11,17,32,0.06);font-weight:800}

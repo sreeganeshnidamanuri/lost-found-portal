@@ -1,0 +1,223 @@
+/* ===== Item Card CSS ===== */
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+}
+
+.item-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== Card Image ===== */
+.item-card-image {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #e8eef2, #f0f4f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.item-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.item-card:hover .item-card-image img {
+  transform: scale(1.1);
+}
+
+.item-card-image.placeholder {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-size: var(--font-size-2xl);
+  color: #999;
+}
+
+/* ===== Card Header ===== */
+.item-card-header {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.item-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.item-card-date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.card-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  transition: color var(--transition-base);
+}
+
+.card-menu:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ===== Card Body ===== */
+.item-card-body {
+  padding: var(--spacing-md);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-card-location {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+.item-card-location::before {
+  content: '📍';
+  font-size: var(--font-size-base);
+}
+
+.item-card-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+/* ===== Card Footer ===== */
+.item-card-footer {
+  padding: var(--spacing-md);
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.status-lost {
+  background: #ffebee;
+  color: var(--color-lost-red);
+}
+
+.status-found {
+  background: #e8f5e9;
+  color: var(--color-found-green);
+}
+
+.item-contact-btn {
+  background: var(--color-primary-dark);
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.item-contact-btn:hover {
+  background: var(--color-accent-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  color: var(--color-text-light);
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-state h2 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .items-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .item-card-image {
+    height: 180px;
+  }
+
+  .item-card-body {
+    padding: var(--spacing-sm);
+  }
+
+  .item-card-footer {
+    padding: var(--spacing-sm);
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .item-contact-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .items-container {
+    grid-template-columns: 1fr;
+  }
+
+  .item-card-image {
+    height: 240px;
+  }
+}
+.item-contact-btn {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
